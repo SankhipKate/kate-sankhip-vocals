@@ -1,4 +1,3 @@
-Kate Sankhip landing page — version 3
-Open index.html in Safari after extracting the folder.
-Keep the assets folder next to index.html.
-This is a local website preview, not a published website.
+Kate Sankhip website — version 7
+Open index.html in your browser. Keep assets beside index.html.
+Public GitHub Pages version remains unchanged until you publish changes through a reviewed Pull Request.

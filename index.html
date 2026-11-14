@@ -1,4 +1,5 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <!DOCTYPE html>
 
 <!DOCTYPE html>
@@ -106,22 +107,78 @@ details{margin-top:16px}details[open]{margin-top:0}details[open] summary{display
  .hero-content .eyebrow:before{display:none}
 }
 
+
+/* Consistent booking calls-to-action throughout the site. */
+.booking-button,.button.booking-button,.contact-small.booking-button{background:var(--gold);border:1px solid var(--gold);color:#211720;font-weight:700;box-shadow:none;text-decoration:none}
+.booking-button:hover,.button.booking-button:hover,.contact-small.booking-button:hover{background:#f0d5a8;border-color:#f0d5a8;color:#211720}
+.booking-button:focus-visible,.button.booking-button:focus-visible,.contact-small.booking-button:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.video-booking{display:flex;justify-content:center;margin:32px 0 4px}
+.video-booking .button{min-width:240px;text-align:center}
+@media(max-width:480px){.video-booking .button{width:100%}}
+
+/* v7 — consistent pill-shaped, centred CTAs; decorative arrows removed. */
+a.button, a.contact-small.booking-button {border-radius:999px;min-height:54px;display:inline-flex;align-items:center;justify-content:center;gap:11px;padding:13px 26px;text-align:center;line-height:1.2;box-sizing:border-box;white-space:normal}
+a.button.booking-button, a.contact-small.booking-button {background:var(--gold);border-color:var(--gold);color:#211720}
+a.button.booking-button:hover, a.contact-small.booking-button:hover {background:#f0d5a8;border-color:#f0d5a8;color:#211720}
+.hero-content .actions .button {border-radius:999px;display:inline-flex;align-items:center;justify-content:center;min-height:54px;text-align:center}
+.video-booking .button {min-width:min(260px,100%)}
+.contact-options {align-items:center}
+.contact-options a {display:inline-flex;align-items:center;gap:9px;overflow-wrap:anywhere}
+.contact-options a svg {width:20px;height:20px;flex-shrink:0;color:var(--gold)}
+.wa-icon {display:inline-block;width:22px;height:22px;flex-shrink:0}
+.stats {justify-content:flex-start;gap:clamp(18px,3vw,40px)}
+.stat strong {white-space:nowrap}
+.videos-section .note {margin:22px auto 0;max-width:760px;text-align:center;line-height:1.6}
+.videos-section .video-booking {margin:22px 0 4px}
+/* Holiday programme: animated light snowfall and soft ambient shimmer. */
+.holiday-program{position:relative;isolation:isolate;overflow:hidden;border-color:#deb98166;background:linear-gradient(140deg,#28313a 0%,#242431 46%,#201b28 100%)!important}
+.holiday-program:before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 82% 12%,#f6dcb11c,transparent 55%),radial-gradient(ellipse at 20% 83%,#c5e9ff12,transparent 53%);animation:winter-glow 7s ease-in-out infinite alternate}
+.holiday-program:after{content:none}
+.holiday-program > :not(.snowfall){position:relative;z-index:1}
+.holiday-program h3{color:#f6e4c5}
+.holiday-program .snowfall{position:absolute;inset:0;overflow:hidden;z-index:0;pointer-events:none}
+.snowfall span{position:absolute;left:var(--x);top:-28px;color:#f5faff;opacity:0;font-size:var(--size);line-height:1;text-shadow:0 0 5px #fff7;will-change:transform,opacity;animation:snow-drift var(--duration) linear infinite;animation-delay:var(--delay)}
+@keyframes snow-drift{0%{transform:translate3d(0,-10px,0) rotate(0deg);opacity:0}8%{opacity:.65}65%{opacity:.65}92%{opacity:.45}100%{transform:translate3d(var(--wind),680px,0) rotate(100deg);opacity:0}}
+@keyframes winter-glow{0%{opacity:.42}50%{opacity:1}100%{opacity:.55}}
+@media(prefers-reduced-motion:reduce){.snowfall span,.holiday-program:before{animation:none}.snowfall span{opacity:.25;transform:translateY(95px)}}
+/* Straightforward performance details: 3 comparable facts and separate full-width technical card. */
+.format .format-intro {max-width:850px;margin-bottom:38px}
+.format .format-intro .subtext {max-width:740px}
+.format-highlights {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px}
+.format-highlights .feature {border-top:1px solid #ffffff50;padding:18px 0 6px;min-width:0}
+.format-highlights .feature b {font-size:18px;line-height:1.35;margin-bottom:8px}
+.format-highlights .feature span {display:block;font-size:15px;line-height:1.65}
+.tech-panel {margin-top:38px;display:flex;align-items:flex-start;gap:20px;padding:28px 32px;border:1px solid #deb98170;border-radius:16px;background:linear-gradient(115deg,#322633,#261f2b)}
+.tech-icon {flex:0 0 52px;width:52px;height:52px;display:grid;place-items:center;border:1px solid #deb98170;border-radius:50%;color:var(--gold)}
+.tech-icon svg {width:26px;height:26px}
+.tech-copy h3 {font-family:"DM Sans",Arial,sans-serif;font-size:20px;margin:3px 0 9px}
+.tech-copy p {font-size:15px;line-height:1.7;color:#d4cbd0;margin:0;max-width:780px}
+@media(max-width:760px){.format-highlights{grid-template-columns:1fr;gap:18px}.format .format-intro{margin-bottom:26px}.tech-panel{padding:22px;gap:15px;margin-top:28px}.tech-icon{width:44px;height:44px;flex-basis:44px}}
+@media(max-width:420px){.tech-panel{flex-direction:column}.contact-options a{max-width:100%}}
+
+
+/* Statistics: original two-line hierarchy, three equal columns, no wrapping. */
+.about-copy{container-type:inline-size}
+.about-copy .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;align-items:start;justify-content:stretch;min-width:0;width:100%;flex-wrap:nowrap}
+.about-copy .stat{display:flex;flex-direction:column;align-items:center;justify-content:start;text-align:center;min-width:0;max-width:100%}
+.about-copy .stat strong{display:block;color:var(--gold);font-family:Georgia,serif;font-weight:500;font-size:clamp(26px,6.5cqw,52px);line-height:1.06;white-space:nowrap}
+.about-copy .stat span{display:block;color:var(--gold);font-family:Georgia,serif;font-size:clamp(18px,5.3cqw,41px);font-weight:500;line-height:1.15;letter-spacing:-.025em;white-space:nowrap;margin-top:4px}
 </style>
 </head>
 <body>
 <header class="shell"><nav aria-label="Main navigation">
 <a class="brand" href="#">KATE <span>SANKHIP</span></a>
 <div class="links"><a href="#about">About</a><a href="#listen">Watch &amp; Listen</a><a href="#repertoire">Programs</a></div>
-<a class="contact-small" href="#booking">Book a performance ↗</a>
+<a class="contact-small booking-button" href="#booking">Book a Performance</a>
 </nav></header>
 <main>
 <div class="hero">
-<div class="hero-photo" aria-hidden="true"><img src="assets/hero.jpg" alt="" fetchpriority="high"></div>
+<div aria-hidden="true" class="hero-photo"><img alt="" fetchpriority="high" src="assets/hero.jpg"/></div>
 <div class="shell hero-content">
 <div class="eyebrow">Live vocal entertainment · Baguio &amp; beyond</div>
 <h1>Kate Sankhip<em>Jazz &amp; Blues</em></h1>
 <p class="lead">An unforgettable soundtrack to your evening. Soulful jazz, blues and timeless classics — live vocals for restaurants, lounges and special occasions.</p>
-<div class="actions"><a class="button" href="#listen">Watch performances <span aria-hidden="true">↗</span></a><a class="button outline" href="#booking">Enquire about booking</a></div>
+<div class="actions"><a class="button booking-button" href="#booking">Book a Performance</a><a class="button outline" href="#listen">Watch performances </a></div>
 </div>
 <div class="shell hero-bottom"><span>Restaurant evenings · Private events</span><span>Philippines</span></div>
 </div>
@@ -131,12 +188,12 @@ details{margin-top:16px}details[open]{margin-top:0}details[open] summary{display
 <p>Kate Sankhip is a vocalist with 18 years of music education, including studies in operatic vocal performance at a conservatory in Yekaterinburg, Russia. She also plays piano, violin and guitar.</p>
 <p>She has performed in restaurants, cafés and at corporate and festive events in Russia, Montenegro and the Philippines. Her expressive vocals and thoughtfully selected songs create a warm, memorable atmosphere.</p>
 <p>Performances feature <strong>live vocals with professional instrumental backing tracks</strong>. Repertoire includes songs in English, Russian, Italian and Spanish.</p>
-<div class="stats"><div class="stat"><strong>18 years</strong><span>Music education</span></div><div class="stat"><strong>3 countries</strong><span>Performance experience</span></div><div class="stat"><strong>4 languages</strong><span>Song repertoire</span></div></div>
+<div class="stats"><div class="stat"><strong>18</strong><span>years</span></div><div class="stat"><strong>3</strong><span>countries</span></div><div class="stat"><strong>4</strong><span>languages</span></div></div>
 </div></div></section>
 <section class="videos-section" id="listen"><div class="shell">
 <div class="section-head"><div><div class="section-label">Watch &amp; listen</div><h2>See the music <em>come alive</em></h2></div><p class="subtext">Real moments from live performances. Press play to experience Kate's voice and stage presence.</p></div>
 <div class="video-grid">
-<article class="video-card"><video aria-label="Live vocal performance" controls="" playsinline="" poster="assets/poster-4.jpg" preload="none"><source src="assets/performance-4.mp4" type="video/mp4"/></video><div class="video-caption"><strong>Live Performance</strong><span>Vocal performance</span></div></article><article class="video-card"><video aria-label="Kate Sankhip singing live" controls="" playsinline="" poster="assets/poster-new.jpg" preload="none"><source src="assets/performance-new.mp4" type="video/mp4"/></video><div class="video-caption"><strong>Live Vocal Performance</strong><span>Live performance</span></div></article><article class="video-card"><video aria-label="Stage performance with musicians" controls="" playsinline="" poster="assets/poster-3.jpg" preload="none"><source src="assets/performance-3.mp4" type="video/mp4"/></video><div class="video-caption"><strong>On Stage</strong><span>With live musicians</span></div></article><article class="video-card"><video aria-label="Acoustic performance" controls="" playsinline="" poster="assets/poster-2.jpg" preload="none"><source src="assets/performance-2.mp4" type="video/mp4"/></video><div class="video-caption"><strong>Live Vocal Highlights</strong><span>Intimate acoustic performance</span></div></article></div><p class="note">Footage includes past performances with accompanying musicians. Current bookings are offered as live vocals with backing tracks.</p>
+<article class="video-card"><video aria-label="Live vocal performance" controls="" playsinline="" poster="assets/poster-4.jpg" preload="none"><source src="assets/performance-4.mp4" type="video/mp4"/></video><div class="video-caption"><strong>Live Performance</strong><span>Vocal performance</span></div></article><article class="video-card"><video aria-label="Kate Sankhip singing live" controls="" playsinline="" poster="assets/poster-new.jpg" preload="none"><source src="assets/performance-new.mp4" type="video/mp4"/></video><div class="video-caption"><strong>Live Vocal Performance</strong><span>Live performance</span></div></article><article class="video-card"><video aria-label="Stage performance with musicians" controls="" playsinline="" poster="assets/poster-3.jpg" preload="none"><source src="assets/performance-3.mp4" type="video/mp4"/></video><div class="video-caption"><strong>On Stage</strong><span>With live musicians</span></div></article><article class="video-card"><video aria-label="Acoustic performance" controls="" playsinline="" poster="assets/poster-2.jpg" preload="none"><source src="assets/performance-2.mp4" type="video/mp4"/></video><div class="video-caption"><strong>Live Vocal Highlights</strong><span>Intimate acoustic performance</span></div></article></div><p class="note">Footage includes past performances with accompanying musicians. Current bookings are offered as live vocals with backing tracks.</p><div class="video-booking"><a class="button booking-button" href="#booking">Book a Performance</a></div>
 </div></section>
 <section id="repertoire"><div class="shell">
 <div class="section-label">The repertoire</div><h2>Four moods <em>One voice</em></h2>
@@ -145,23 +202,58 @@ details{margin-top:16px}details[open]{margin-top:0}details[open] summary{display
 <article class="program"><div class="number">01 / SIGNATURE</div><h3>Jazz &amp; Blues Evening</h3><p>Jazz standards, blues-inflected favorites and contemporary songs reimagined with a jazzy touch.</p><ul class="song-list"><li>Dream a Little Dream of Me</li><li>My Funny Valentine</li><li>Summertime</li><li>The Man I Love</li><li>La Vie en Rose — jazz cover</li><li>Sway</li></ul><details><summary>More songs</summary><ul class="song-list"><li>Quizás, Quizás, Quizás</li><li>Beyond the Sea</li><li>Moon River</li><li>Creep — jazz cover</li><li>Sweet Dreams — jazz cover</li><li>Young and Beautiful — jazz cover</li><li>Killing Me Softly with His Song</li><li>Ya — To, Chto Nado (I’m Just What You Need)</li><li>Zhyoltye Botinki (Yellow Boots)</li><li>Charli (Charlie)</li></ul></details></article>
 <article class="program"><div class="number">02 / INTIMATE</div><h3>Romantic Dinner</h3><p>Beautiful ballads and beloved classics, perfect for candlelit dinners and memorable celebrations.</p><ul class="song-list"><li>My Way</li><li>Bésame Mucho</li><li>Con te partirò</li><li>Can't Help Falling in Love</li><li>Unchained Melody</li><li>Wicked Game</li></ul><details><summary>More songs</summary><ul class="song-list"><li>Hallelujah</li><li>Young and Beautiful</li><li>Can't Take My Eyes Off You</li><li>Stand by Me</li><li>I Don't Know How to Love Him</li><li>Sunny</li><li>I Got You (I Feel Good)</li><li>I'm Not the Only One</li></ul></details></article>
 <article class="program"><div class="number">03 / SPECIAL PROGRAM</div><h3>Russian Romance &amp; Nostalgia</h3><p>Traditional Russian romances and beloved Russian-language classics for an evocative themed evening.</p><ul class="song-list"><li>Ochi Chyornye (Dark Eyes)</li><li>Kalitka (The Little Gate)</li><li>Gori, Gori, Moya Zvezda (Shine, Shine, My Star)</li><li>Yamshchik, Ne Goni Loshadey (Coachman, Do Not Hurry the Horses)</li><li>V Gornitse (In the Upper Room)</li><li>Oy, Da Ne Vecher! (Oh, It Is Not Evening Yet!)</li></ul><details><summary>More songs</summary><ul class="song-list"><li>Ballada Atosa (Athos’s Ballad)</li><li>Polyot Na Deltaplane (Hang-Glider Flight)</li><li>Tyoplye Koty (Warm Cats)</li><li>Lesnoy Olen (Forest Deer)</li><li>Klyon (Maple Tree)</li><li>Serenada Trubadura (The Troubadour’s Serenade)</li><li>Ya — To, Chto Nado (I’m Just What You Need)</li><li>Zhyoltye Botinki (Yellow Boots)</li><li>Charli (Charlie)</li><li>Luch Solntsa Zolotogo (A Golden Ray of Sunshine)</li></ul></details></article>
-<article class="program"><div class="number">04 / SEASONAL</div><h3>Christmas &amp; New Year</h3><p>Festive standards, nostalgic favorites and holiday magic for Christmas dinners and New Year celebrations.</p><ul class="song-list"><li>Have Yourself a Merry Little Christmas</li><li>Let It Snow!</li><li>Winter Wonderland</li><li>Santa Baby</li><li>Happy New Year</li><li>Jingle Bells</li></ul><details><summary>More songs</summary><ul class="song-list"><li>It's Beginning to Look a Lot Like Christmas</li><li>I'll Be Home for Christmas</li><li>Santa Claus Is Coming to Town</li><li>Silent Night</li><li>Pyat Minut (Five Minutes)</li><li>Snezhinka (Snowflake)</li><li>A Sneg Idyot (And the Snow Is Falling)</li><li>Novogodnyaya (New Year Song)</li></ul></details></article>
+<article class="program holiday-program"><div class="snowfall" aria-hidden="true"><span style="--x:6%;--delay:-0.7s;--duration:11.0s;--size:12px;--wind:-18px">❄</span><span style="--x:14%;--delay:-2.8s;--duration:13.1s;--size:9px;--wind:20px">❄</span><span style="--x:24%;--delay:-5.0s;--duration:15.2s;--size:11px;--wind:-9px">❄</span><span style="--x:33%;--delay:-7.1s;--duration:17.3s;--size:14px;--wind:25px">❄</span><span style="--x:43%;--delay:-9.2s;--duration:19.4s;--size:8px;--wind:10px">❄</span><span style="--x:54%;--delay:-11.3s;--duration:11.0s;--size:12px;--wind:-15px">❄</span><span style="--x:65%;--delay:-13.5s;--duration:13.1s;--size:9px;--wind:-18px">❄</span><span style="--x:77%;--delay:-15.6s;--duration:15.2s;--size:11px;--wind:20px">❄</span><span style="--x:88%;--delay:-17.7s;--duration:17.3s;--size:14px;--wind:-9px">❄</span><span style="--x:96%;--delay:-19.9s;--duration:19.4s;--size:8px;--wind:25px">❄</span><span style="--x:11%;--delay:-22.0s;--duration:11.0s;--size:12px;--wind:10px">❄</span><span style="--x:20%;--delay:-24.1s;--duration:13.1s;--size:9px;--wind:-15px">❄</span><span style="--x:30%;--delay:-26.3s;--duration:15.2s;--size:11px;--wind:-18px">❄</span><span style="--x:40%;--delay:-28.4s;--duration:17.3s;--size:14px;--wind:20px">❄</span><span style="--x:50%;--delay:-30.5s;--duration:19.4s;--size:8px;--wind:-9px">❄</span><span style="--x:60%;--delay:-32.6s;--duration:11.0s;--size:12px;--wind:25px">❄</span><span style="--x:70%;--delay:-34.8s;--duration:13.1s;--size:9px;--wind:10px">❄</span><span style="--x:81%;--delay:-36.9s;--duration:15.2s;--size:11px;--wind:-15px">❄</span><span style="--x:92%;--delay:-39.0s;--duration:17.3s;--size:14px;--wind:-18px">❄</span></div><div class="number">04 / SEASONAL</div><h3>Christmas &amp; New Year</h3><p>Festive standards, nostalgic favorites and holiday magic for Christmas dinners and New Year celebrations.</p><ul class="song-list"><li>Have Yourself a Merry Little Christmas</li><li>Let It Snow!</li><li>Winter Wonderland</li><li>Santa Baby</li><li>Happy New Year</li><li>Jingle Bells</li></ul><details><summary>More songs</summary><ul class="song-list"><li>It's Beginning to Look a Lot Like Christmas</li><li>I'll Be Home for Christmas</li><li>Santa Claus Is Coming to Town</li><li>Silent Night</li><li>Pyat Minut (Five Minutes)</li><li>Snezhinka (Snowflake)</li><li>A Sneg Idyot (And the Snow Is Falling)</li><li>Novogodnyaya (New Year Song)</li></ul></details></article>
 </div>
 </div></section>
-<section class="format"><div class="shell format-layout">
-<div><div class="section-label">For venues &amp; event planners</div><h2>Effortless elegance, <em>live</em></h2><p class="subtext">A flexible vocal program that works beautifully in restaurants, lounges, hotels, corporate gatherings and private celebrations.</p></div>
-<div class="features">
+<section class="format" id="performance-details">
+<div class="shell">
+<div class="format-intro">
+<div class="section-label">Performance details</div>
+<h2>Live music, <em>your way</em></h2>
+<p class="subtext">A flexible vocal performance for restaurant evenings, lounge settings, celebrations and special events.</p>
+</div>
+<div class="format-highlights">
 <div class="feature"><b>2–3 live sets</b><span>30–45 minutes per set with approximately 15-minute breaks</span></div>
 <div class="feature"><b>Flexible scheduling</b><span>Weekdays, weekends and special occasions by arrangement</span></div>
-<div class="feature"><b>Backing-track performance</b><span>Kate brings a microphone, cable and laptop; a suitable sound system is required</span></div>
 <div class="feature"><b>Baguio &amp; beyond</b><span>Available for events across the region and further afield by arrangement</span></div>
 </div>
-</div></section>
+<div class="tech-panel">
+<div aria-hidden="true" class="tech-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect height="12" rx="3" width="6" x="9" y="2"></rect><path d="M5 10a7 7 0 0 0 14 0M12 17v5M8 22h8"></path></svg></div>
+<div class="tech-copy"><h3>Sound &amp; equipment</h3><p>Kate brings her own microphone, cable and laptop. The venue provides a suitable PA system with amplification and speakers, or sound equipment rental can be arranged separately.</p></div>
+</div>
+</div>
+</section>
 <section class="cta" id="booking"><div class="shell"><div class="section-label">Make your evening memorable</div><h2>Let's bring <em>live music</em> to your venue</h2><p>Booking for restaurants, lounges, hotels, corporate events and private celebrations. Rates and availability provided upon request.</p>
-<a class="button" href="https://wa.me/639674889131?text=Hello%20Kate%2C%20I%27d%20like%20to%20enquire%20about%20a%20live%20performance." rel="noopener" target="_blank">Enquire on WhatsApp ↗</a>
-<div class="contact-options"><a href="tel:+639674889131">+63 967 488 9131</a><a href="mailto:sankhipkate@gmail.com">sankhipkate@gmail.com</a><a href="https://www.facebook.com/Sankhipkate" rel="noopener" target="_blank">Facebook: Sankhipkate ↗</a></div>
+<a aria-label="Enquire on WhatsApp about a performance" class="button booking-button" href="https://wa.me/639674889131?text=Hello%20Kate%2C%20I%27d%20like%20to%20enquire%20about%20a%20live%20performance." rel="noopener" target="_blank"><svg aria-hidden="true" class="wa-icon" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.5 3.5A11.9 11.9 0 0 0 12.1 0C5.5 0 .1 5.4.1 12c0 2.1.5 4.1 1.6 5.9L0 24l6.3-1.6c1.8 1 3.8 1.5 5.8 1.5h.1C18.7 23.9 24 18.5 24 12c0-3.2-1.2-6.2-3.5-8.5ZM12.1 21.9c-1.8 0-3.5-.5-5.1-1.4l-.4-.2-3.8 1 1-3.7-.2-.4c-1-1.6-1.5-3.4-1.5-5.2C2.1 6.5 6.6 2 12.1 2c2.7 0 5.2 1 7 2.9a9.9 9.9 0 0 1 2.9 7c0 5.5-4.5 10-9.9 10ZM17.5 14.5c-.3-.1-1.8-.9-2.1-1-.3-.1-.5-.1-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.5-1.6-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6.3-.4c.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5H7c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.8s1.2 3.2 1.4 3.4c.2.2 2.3 3.6 5.6 5 .8.3 1.4.5 1.9.6.8.1 1.5.1 2.1-.1.6-.2 1.8-.8 2-1.5.3-.8.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4Z"></path></svg>Enquire on WhatsApp</a>
+<div class="contact-options"><a href="tel:+639674889131"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.7 19.7 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .8 2.9a2 2 0 0 1-.5 2.1L8.1 10a16 16 0 0 0 5.9 5.9l1.3-1.3a2 2 0 0 1 2.1-.5c.9.4 1.9.7 2.9.8a2 2 0 0 1 1.7 2Z"></path></svg>+63 967 488 9131</a><a href="mailto:sankhipkate@gmail.com"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><rect height="16" rx="2" width="20" x="2" y="4"></rect><path d="m2 6 10 7 10-7"></path></svg>sankhipkate@gmail.com</a><a href="https://www.facebook.com/Sankhipkate" rel="noopener" target="_blank"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M22 12A10 10 0 1 0 10.4 21.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.7-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.5.7-1.5 1.5V12h2.6l-.4 2.9h-2.2v7A10 10 0 0 0 22 12Z"></path></svg>Sankhipkate</a></div>
 </div></section>
 </main>
 <footer class="shell footer"><span>© <span id="year">2026</span> Kate Sankhip</span><span>Live Jazz &amp; Blues · Baguio City, Philippines</span></footer>
 <script>document.getElementById('year').textContent=new Date().getFullYear();document.querySelectorAll('video').forEach(v=>v.addEventListener('play',()=>document.querySelectorAll('video').forEach(o=>{if(o!==v)o.pause()})));</script>
+<script>
+/* Only adjusts the three statistics if their actual text widths cannot fit. */
+(()=>{
+  const row=document.querySelector('.about-copy .stats');
+  if(!row)return;
+  const items=[...row.querySelectorAll('.stat')];
+  const words=items.map(el=>el.querySelector('span'));
+  const numbers=items.map(el=>el.querySelector('strong'));
+  function fit(){
+    row.style.setProperty('--stat-word-size','43px');
+    row.style.setProperty('--stat-number-size','58px');
+    const space=row.clientWidth;
+    if(!space)return;
+    const required=items.reduce((sum,el)=>sum+el.getBoundingClientRect().width,0);
+    const scale=Math.min(1,Math.max(.25,(space-16-2)/required));
+    if(scale<1){
+      row.style.setProperty('--stat-word-size',(43*scale).toFixed(2)+'px');
+      row.style.setProperty('--stat-number-size',(58*scale).toFixed(2)+'px');
+    }
+  }
+  const observer=new ResizeObserver(fit);
+  observer.observe(row);
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);
+  fit();
+})();
+</script>
 </body></html>
